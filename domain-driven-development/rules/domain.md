@@ -1,0 +1,114 @@
+# Domain Layer Rules
+
+## Domain Objects
+
+Domain objects must be defined as **TypeScript types branded with `__brand` fields** in `domain/[domain name]/models.ts`.
+Every Value Object (typically properties of entities) must be branded.
+Entities itself should not be branded. Correctness of the entities is guaranteed by the Factory functions.
+This ensures that domain objects are not accidentally created or manipulated without using the correct factories and services,
+
+```ts
+export type UserId = string & { __brand: "UserId" };
+export type UserName = string & { __brand: "UserName" };
+export type UserEmail = string & { __brand: "UserEmail" };
+export type User = {
+  // not branded
+  id: UserId;
+  name: UserName;
+  email: UserEmail;
+};
+```
+
+## Factories
+
+Each domain object must have a Factory function in `domain/[domain name]/lifecycle.ts` that ensures the correctness of the created objects.
+
+Factories may use validation libraries (e.g. Zod) only as an internal implementation detail. Specifically:
+
+- Validation libraries must not appear in factory public interfaces, types, or errors.
+- Factory inputs and outputs must consist only of primitives and domain types.
+- The choice of validation library must be replaceable without affecting callers.
+
+```ts
+export type User = { ... };
+// Zod schema is NOT exported
+const userNameSchema = z.string().min(1).max(50);
+
+export function validateUserName(value: string): UserName {
+  const result = userNameSchema.safeParse(value);
+
+  if (!result.success) {
+    // ドメイン語彙で失敗を表現する
+    // ZodError をそのまま投げない
+    throw new Error("Invalid UserName");
+  }
+
+  return result.data as UserName;
+}
+
+export function createUser({
+  _id?: string,
+  _name: string,
+  _email: string
+}): User {
+  const id = _id ? validateId(_id) : crypto.randomUUID() as UserId;
+  const name = validateUserName(_name); // string -> UserName
+  const email = validateUserEmail(_email); // string -> UserEmail
+  return {
+    id: id,
+    name: name,
+    email: email,
+  };
+}
+```
+
+Every instances of domain objects must be created via the Factory functions, and direct object creation is prohibited.
+
+## Repositories
+
+For each domain object, there must be a Repository.
+
+Abstract Repository interfaces must be defined in `domain/[domain name]/lifecycle.ts`, and concrete Repository implementations must be defined in `domain/[domain name]/adapters/` that connect the abstract Repository interfaces to specific storage technologies.
+
+```ts
+// core/lifecycle.ts
+export interface UserRepository {
+  getById(id: UserId): Promise<User | null>;
+  save(user: User): Promise<void>;
+  delete(id: UserId): Promise<void>;
+}
+
+// adapters/repository.ts
+import { UserRepository } from "../core/lifecycle";
+export class UserRepositoryImpl implements UserRepository {
+  async getById(id: UserId): Promise<User | null> {
+    // connect to specific storage and return User
+  }
+
+  async save(user: User): Promise<void> {
+    // connect to specific storage and save User
+  }
+
+  async delete(id: UserId): Promise<void> {
+    // connect to specific storage and delete User
+  }
+}
+```
+
+## Services
+
+Any calculation from or manipulation of domain objects must be implemented as pure functions in `domain/[domain name]/services.ts`.
+These functions take domain objects as arguments, return updated copies of domain objects, and never mutate their arguments or access any storage.
+All business logic must be implemented in these service functions, and they must be thoroughly unit tested.
+
+```ts
+export function updateUserEmail(user: User, newEmail: string): User {
+  const updatedEmail = validateUserEmail(newEmail); // string -> UserEmail
+  return {
+    ...user,
+    email: updatedEmail,
+  };
+}
+```
+
+Simple CRUD shouldn't be services. They should be acheved just by calling factories (C) and repositories `get` (R), `save` (U) and `delete`(D)

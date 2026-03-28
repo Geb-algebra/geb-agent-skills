@@ -18,11 +18,11 @@ When you need a new component, use one of the following three methods in order o
 
 ## Styling rules
 
+### Layout by CSS Modules, shapes and colors by Tailwind CSS
+
 Use tailwind css only for styling shapes and colors of HTML elements and texts. Never use it for defining layouts and placements of elements.
 
 Use css modules only for defining layouts and placements of elements. Never use it for styling shapes and colors.
-
-Prefer grid layout over other methods such as flex and, if applicable, the best way is to use `grid-template-areas`.
 
 These rules typically results in a structure like this:
 
@@ -62,3 +62,7 @@ export function MyComponent() {
   grid-area: content;
 }
 ```
+
+### Prefer grid over any other layout methods
+
+Prefer grid layout over other methods such as flex and, if applicable, the best way is to use `grid-template-areas`.

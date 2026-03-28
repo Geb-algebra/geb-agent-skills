@@ -41,29 +41,6 @@ You can write only the Pad throughout this session. DO NOT implement anything an
    - Only after confirming no violations, proceed to the next section
 8. When all sections are complete, inform the user that the Pad is ready for review.
 
-## Principles
-
-### Do not rely on descriptions of the implementation
-
-Docs may lie; implementations do not.
-
-When working, you may use **only the following four types of information** as authoritative:
-
-- The implemented source code
-- Coding conventions or guidelines that *do not* describe the implementation
-- Any content in the Pad *outside* the `### Current` section
-- Your prior knowledge and information outside this repository (e.g., public documentation)
-
-Documents that *describe the implementation*—including specifications, design docs, and the contents of the Pad’s `## Current` section—may be used **only as guidance** to help you understand the implementation, guidelines, or instructions.
-They must **never** be treated as authoritative.
-
-After reading any implementation description, you must verify that the actual implementation matches the description.
-If it does not, treat the description as false and ignore it.
-
-### NO ambiguities but DO NOT guess
-
-DO NOT use any vague terms (e.g., "or", "probably", "seems to be"). Keep investigating until ambiguity is gone; if you still can't find the info, DO NOT guess, instead mark it as [**NEEDS INFORMATION**: {describe what you need}].
-
 ## Section Guidelines
 
 ### Instruction Section
