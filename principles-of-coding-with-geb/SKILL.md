@@ -1,5 +1,5 @@
 ---
-name: principle-of-coding-with-geb
+name: principles-of-coding-with-geb
 description: Principles of coding tasks I prefer. Use this skill for EVERY code-related task (e.g., implementation planning, coding, writing documentations).
 ---
 
