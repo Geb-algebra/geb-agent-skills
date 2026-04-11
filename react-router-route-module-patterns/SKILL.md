@@ -1,6 +1,6 @@
 ---
 name: react-router-route-module-patterns
-description: How to implement Route Modules for React Router. Use when you implement any page or component using React Router's features (loader, action, clientLoader, clientAction, fetcher, Form, etc.).
+description: How to implement Route Modules for React Router. Use when you implement any page or component using React Router Framework Mode.
 ---
 
 # React Router Route Module Patterns
