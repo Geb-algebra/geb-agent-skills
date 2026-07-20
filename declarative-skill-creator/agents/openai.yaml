@@ -1,0 +1,4 @@
+interface:
+  display_name: "Declarative Skill Creator"
+  short_description: "Design activity Skills and split reusable information"
+  default_prompt: "Use $declarative-skill-creator to design this activity-defining Skill and separate reusable information."
