@@ -1,0 +1,4 @@
+interface:
+  display_name: "散らかった考えを整理"
+  short_description: "書き散らした文章を漏れなく分類・再配列してMarkdown化"
+  default_prompt: "Use $organize-scattered-thoughts to reorganize these rough notes into structured Markdown bullets."
