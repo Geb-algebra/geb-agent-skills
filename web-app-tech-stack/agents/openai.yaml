@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web App Tech Stack"
+  short_description: "React・Cloudflare 構成の技術選択規則"
+  default_prompt: "Use $web-app-tech-stack to apply the standard React and Cloudflare technology choices to this web app task."
