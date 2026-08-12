@@ -1,0 +1,4 @@
+interface:
+  display_name: "Module Mall React Preferences"
+  short_description: "TypeScript・React版MMAの設計規約"
+  default_prompt: "Use $module-mall-react-preferences to apply my TypeScript and React Module Mall preferences to this task."
