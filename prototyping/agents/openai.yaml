@@ -1,4 +1,4 @@
 interface:
   display_name: "Prototyping"
-  short_description: "実装と反復検証を通じて本実装の仕様・設計を確定する"
-  default_prompt: "Use $prototyping to implement and refine a production-quality prototype while keeping its design record current."
+  short_description: "動く実装と検証を通じて未確定の仕様・設計を決定する"
+  default_prompt: "Use $prototyping to resolve unsettled behavior or design through a working prototype."
