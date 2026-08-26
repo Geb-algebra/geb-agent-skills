@@ -14,7 +14,7 @@ description: Use when product behavior or internal design remains unsettled and 
 反復中の成果は常に次の二つが揃った状態である。
 
 1. 現在採用している決定を実現し、関係する検証を通した動作可能な実装である。
-2. 現在の決定、重要な代替案、検証結果、未決事項を区別した設計記録である。
+2. 現在の決定、重要な代替案、未決事項を区別した設計記録である。
 
 実装は次の状態である。
 
@@ -33,7 +33,7 @@ description: Use when product behavior or internal design remains unsettled and 
 - 現在採用している重要な決定事項のうち、実装用 worktree、そのブランチ、または未 commit の変更にしか存在しないものはない。
 - 外部から観測できる挙動は仕様、実現する内部構造は設計として分離されている。
 - 重要な代替案は、対応する現在の決定と棄却根拠を参照できる。
-- 実装、決定、検証、未決事項、Status が互いに矛盾しない。
+- 実装、決定、未決事項、Status が互いに矛盾しない。
 - Status は `Proposed`、`Accepted`、`Deprecated`、`Superseded by [<新しい設計記録>](<相対パス>)` のいずれかである。
 - Status の遷移は `Proposed` から `Accepted`、`Accepted` から `Deprecated`、または `Accepted` から `Superseded by [...]` だけである。
 - `Accepted` 後の本文は変更されていない。決定を置き換えた場合は新しい設計記録が存在し、旧記録では Status だけが `Superseded by [...]` である。置き換える決定なしに廃止した場合だけ Status が `Deprecated` である。
