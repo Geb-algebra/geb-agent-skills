@@ -1,0 +1,4 @@
+interface:
+  display_name: "Intent Distiller"
+  short_description: "著者固有の意図を一般論や文章上の足場から見分けるための判断基準"
+  default_prompt: "文章から、書き手がわざわざ伝えたかった意図を見極めてください。"
