@@ -1,0 +1,4 @@
+interface:
+  display_name: "OOUI Design"
+  short_description: "タスクを確立して整合したオブジェクト指向UI設計を定義する"
+  default_prompt: "Use $ooui-design to establish the user tasks and define the object-oriented screen structure for this product."
