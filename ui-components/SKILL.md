@@ -7,7 +7,7 @@ description: Implement React components in maintainable, effortless and consiste
 
 ## Component Library
 
-We use shadcn/ui components which can be installed with `pnpm dlx shadcn@latest add {component name}`. 
+We use shadcn/ui components which can be installed with `bun x shadcn@latest add {component name}`. 
 
 When you need a new component, use one of the following three methods in order of this priority.
 
@@ -15,6 +15,8 @@ When you need a new component, use one of the following three methods in order o
 2. use shadcn/ui components with custom style
 3. create components by composing shadcn/ui components
 4. implement components by yourself
+
+use `base-vega` style component.
 
 ## Styling rules
 
