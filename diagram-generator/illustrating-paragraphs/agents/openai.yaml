@@ -1,0 +1,4 @@
+interface:
+  display_name: "Illustrating Paragraphs"
+  short_description: "段落ごとの直感的な図解画像をMarkdownへ挿入"
+  default_prompt: "Use $illustrating-paragraphs to add an intuitive diagram image immediately after every prose paragraph in this Markdown."
