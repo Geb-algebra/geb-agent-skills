@@ -1,0 +1,4 @@
+interface:
+  display_name: Geb Colored Flat Diagram Style
+  short_description: "Geb配色・平面的で簡素な絵・指定書体の図解スタイル"
+  default_prompt: "Use $geb-colored-flat-diagram-style as the visual style context for this diagram."

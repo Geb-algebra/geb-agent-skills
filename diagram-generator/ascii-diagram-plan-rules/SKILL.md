@@ -14,7 +14,7 @@ description: Use when creating, changing, or reviewing ASCII art composition pla
 
 ## 不変条件
 
-ここで1マスは全角1文字または半角2文字に相当する。縦横比は横:縦で表し、外枠罫線を除く内側のマス数で計測する。
+ここで1マスは全角1文字、半角2文字、または絵文字1 grapheme clusterに相当する。絵文字の grapheme cluster を構成する個々の code point は、全角・半角文字として重ねて数えない。縦横比は横:縦で表し、外枠罫線を除く内側のマス数で計測する。
 
 ### 外枠と記号
 

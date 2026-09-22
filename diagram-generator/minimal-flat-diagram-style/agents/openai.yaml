@@ -1,4 +1,0 @@
-interface:
-  display_name: "Minimal Flat Diagram Style"
-  short_description: "少色・平面・最小要素で統一する図解用の視覚スタイル規則"
-  default_prompt: "Use $minimal-flat-diagram-style as the visual style context for this diagram."
