@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagram Generation Rules"
+  short_description: "図解画像の生成方式・画面構成・伝達の基本規則"
+  default_prompt: "Use $diagram-generation-rules as the base context for this explanatory diagram image."
