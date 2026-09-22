@@ -1,4 +1,4 @@
 interface:
   display_name: "Illustrating Paragraphs"
-  short_description: "段落対応の図解計画を画像化してMarkdownへ挿入"
-  default_prompt: "Use $illustrating-paragraphs to render this diagram plan and insert each image at its corresponding location in the source Markdown."
+  short_description: "Markdownの段落図解を概念一覧とASCIIで計画し、画像生成・本文挿入まで実行"
+  default_prompt: "Use $illustrating-paragraphs to plan diagrams for this Markdown, generate the images, and insert them at the corresponding passages using the applicable diagram criteria and visual style."

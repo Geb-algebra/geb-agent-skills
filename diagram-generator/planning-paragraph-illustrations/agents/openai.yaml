@@ -1,4 +1,0 @@
-interface:
-  display_name: "Planning Paragraph Illustrations"
-  short_description: "段落単位を既定とする連続した図解計画を作成"
-  default_prompt: "Use $planning-paragraph-illustrations to plan diagrams for this Markdown, defaulting to one diagram per prose paragraph unless I specify otherwise."

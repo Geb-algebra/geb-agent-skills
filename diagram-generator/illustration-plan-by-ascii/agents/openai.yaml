@@ -1,4 +1,0 @@
-interface:
-  display_name: "Illustration Plan by ASCII"
-  short_description: "固定寸法のASCII artで図解の構図を計画"
-  default_prompt: "Use $illustration-plan-by-ascii to plan this diagram composition as fixed-size ASCII art."
