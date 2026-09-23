@@ -1,6 +1,6 @@
 ---
 name: planning-paragraph-diagrams
-description: Use when paragraph-written Markdown needs a reusable diagram plan before any diagrams are implemented.
+description: Use when paragraph-written Markdown needs a reusable diagram plan before implementation, including when a diagram request is handled in Plan Mode and the plan must be created in that session.
 ---
 
 # Planning Paragraph Diagrams
@@ -28,3 +28,9 @@ The completed plan has these observable properties:
 - Context- or implementation-specific additions are present only when the applicable Context or intended implementation requires them.
 
 Only prose paragraphs are eligible by default. Headings, lists, tables, code blocks, and existing images are not prose paragraphs. The user may select or exclude prose paragraphs, but selection does not relax one paragraph–one diagram.
+
+## Plan Mode
+
+When a diagram request is handled in Plan Mode, use this Skill during that Plan Mode session and produce the actual diagram-plan Markdown defined above. Complete the Context loading, ASCII compositions, and blind evaluations in the current session.
+
+Do not return a meta-plan that says the diagram plan, ASCII compositions, or evaluations will be created later. The Plan Mode outcome is the completed diagram plan itself, not a plan for making that plan. Defer only implementation work such as generating final images, editing the source Markdown, or producing another output format.
