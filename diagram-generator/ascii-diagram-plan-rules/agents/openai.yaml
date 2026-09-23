@@ -1,4 +1,0 @@
-interface:
-  display_name: "ASCII Diagram Plan Rules"
-  short_description: "図解用ASCII構図の罫線、寸法、比率、注釈、検証に関する厳密な規則"
-  default_prompt: "Use $ascii-diagram-plan-rules as the formatting and dimension rules for this ASCII diagram plan."

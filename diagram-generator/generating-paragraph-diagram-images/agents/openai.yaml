@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generating Paragraph Diagram Images"
+  short_description: "図解計画からラスター画像を生成し、参照元Markdownへ挿入"
+  default_prompt: "Use $generating-paragraph-diagram-images to implement this paragraph diagram plan as images in its referenced Markdown source."

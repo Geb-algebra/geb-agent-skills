@@ -1,4 +1,4 @@
 interface:
   display_name: "Diagram Design Principles"
-  short_description: "図解とその計画に適用する、情報伝達・概念の共通定義・構図の品質基準"
-  default_prompt: "Use $diagram-design-principles as the quality criteria for this explanatory diagram or its plan."
+  short_description: "文字図形主・直感優先・反復概念の共通表現という図解設計原則"
+  default_prompt: "Use $diagram-design-principles as the design context for this explanatory diagram or its plan."

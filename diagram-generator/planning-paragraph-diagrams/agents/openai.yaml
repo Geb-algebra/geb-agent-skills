@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planning Paragraph Diagrams"
+  short_description: "段落ごとに一図を対応させる、実装前の図解計画Markdownを作成"
+  default_prompt: "Use $planning-paragraph-diagrams to create a reusable diagram plan for the selected prose paragraphs in this Markdown."
