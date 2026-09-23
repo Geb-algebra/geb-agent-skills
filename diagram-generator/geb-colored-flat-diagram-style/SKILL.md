@@ -30,6 +30,8 @@ description: Use when explanatory diagrams need the Geb color palette, flat low-
 | アクセント文字 | `#002538` |
 | 背景 | `#fffff0` |
 
+背景は透明にせず、背景色で塗りつぶす。
+
 ### 文字
 
 - 図解対象に元から含まれる文字を除き、追加する1 phraseのラベルと、どうしても必要な説明文は英語で書かれている。
