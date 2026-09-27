@@ -44,6 +44,8 @@ Do not include image filenames, image directories, link destinations, or other i
 
 Plan every composition within the capabilities and constraints of the intended implementation method. Apply requirements supplied by that implementation method when planning, and do not plan visual detail or effects that the method cannot reproduce—for example, do not require numerous rich illustrations from an implementation limited to ordinary presentation shapes.
 
+The ASCII composition is a structural contract for elements, topology, containment, semantic ordering, directed source-to-target connections, and coarse relative placement. Downstream implementations preserve recognizable left/right and above/below relations, the primary layout direction, and rough element order; they do not reverse those relations or change a horizontal arrangement into a vertical one. It is not a rendering specification for exact coordinates, distances, alignment, proportions, size, shape, color, typography, or style. Implementations optimize those details and the visual treatment for their medium rather than mechanically tracing the ASCII grid. The composition's outer border is a canvas boundary, not a visible container, unless the plan explicitly gives it semantic meaning.
+
 ## Blind evaluation
 
 For every diagram:

@@ -1,6 +1,21 @@
 # ASCII Composition Rules
 
-These rules define the canonical composition sketch for each planned diagram.
+These rules define the structural composition sketch for each planned diagram.
+
+## Interpretation boundary
+
+The ASCII composition specifies the diagram's semantic structure, not its final rendering. Its binding information is:
+
+- the elements and their semantic kinds or roles;
+- which elements are connected, grouped, contained, ordered, or branched;
+- connection direction (source and target), semantic order, and coarse relative placement; and
+- labels needed to identify those elements and relationships.
+
+Coarse relative placement means that left/right, above/below, the primary layout direction, and the rough ordering of elements remain recognizable. Do not reverse these relations or turn a horizontal arrangement into a vertical one. Exact coordinates, distances, alignment, occupied sizes, aspect ratios of individual elements, and proportions are not binding. For example, a target drawn below its source remains broadly below it, but its offset, distance, alignment, and size may change.
+
+The ASCII composition also does not specify final shape geometry, color, typography, line treatment, decoration, or visual style. The outer border defines the composition canvas and is not itself a diagram element unless the plan explicitly identifies a semantic container.
+
+A downstream implementer preserves the elements, topology, and coarse relative placement while choosing exact positions, sizes, shapes, styling, emphasis, and visual hierarchy appropriate to the target medium. Faithful implementation therefore preserves the sketch's recognizable spatial organization without literally tracing its text grid. Implementations should use the medium's visual capabilities to produce an effective design rather than defaulting every element to the same shape, size, or color.
 
 One cell is one full-width character, two half-width characters, or one emoji grapheme cluster. Code points inside an emoji grapheme cluster are not counted again. Ratios are width:height and use the area inside the outer border.
 
@@ -27,7 +42,7 @@ Because a horizontal text cell carries more information than one text row, conve
 
 ## Composition and annotations
 
-- The composition makes the position, occupied size, applicable direction, and connections of its elements distinguishable.
+- The composition makes its elements, semantic relationships, connection sources and targets, semantic order, and coarse relative placement distinguishable. These qualitative spatial relations are preserved, but the sketch does not prescribe exact coordinates, distances, alignment, proportions, or dimensions.
 - The bordered area contains composition only, not color, emphasis, or art-style instructions.
 - Put non-compositional visual instructions below the border but inside the same code fence. Annotations do not count toward the composition dimensions.
 
