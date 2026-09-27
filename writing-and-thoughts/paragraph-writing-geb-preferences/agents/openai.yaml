@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gebのパラグラフ表記設定"
+  short_description: "トピック文の太字化と一文一行を定めるGeb個人用の表記規則"
+  default_prompt: "$paragraph-writing-geb-preferences を使用して、この文章をGebの表記設定に合わせてください。"

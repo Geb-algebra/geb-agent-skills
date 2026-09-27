@@ -1,4 +1,4 @@
 interface:
-  display_name: "パラグラフライティング"
-  short_description: "要点先行で簡潔な段落を書くための構成・情報量の規則"
-  default_prompt: "Use $paragraph-writing to write a concise response with one clear message per paragraph."
+  display_name: "パラグラフ・ライティング"
+  short_description: "論理的な日本語パラグラフの構成・評価に用いる基本規則"
+  default_prompt: "$paragraph-writing を使用して、この日本語の論理的な文章を執筆またはレビューしてください。"
