@@ -1,6 +1,6 @@
 ---
 name: diagram-design-principles
-description: Use when creating, changing, or reviewing explanatory diagrams or their plans and the meaning should be carried by labeled shapes, simplified for intuitive understanding, and represented consistently across repeated concepts.
+description: Use when creating, changing, or reviewing explanatory diagrams or their plans and the meaning should be carried by labeled shapes and represented consistently across repeated concepts.
 ---
 
 # Diagram Design Principles
@@ -14,17 +14,11 @@ description: Use when creating, changing, or reviewing explanatory diagrams or t
 ### 文字図形が主・絵は補足
 
 - 単純図形、短いラベル、配置、矢印、包含などの関係表現が主題の意味を担っている。
-- 主題を担う各図形には、それが表すモノ・コトを識別できる短いラベルがある。ラベルは複数語でもよいが、文章ではない。
+- 主題を担う各図形には、それが表すモノ・コトを識別できるラベルがある。
 - 絵・アイコンは、対応する図形の内側または直近で理解と識別を助ける補助であり、絵だけに概念や関係の意味を担わせていない。
-- 説明用の短文は、図形内、接続線上、または対象へ接続されたコールアウトとして対象との対応を識別できる。
+- 説明文は、図形内、接続線上、または対象へ接続されたコールアウトとして対象との対応を識別できる。
+- ラベルの短さは、対象を識別する名称に対する規則であり、意味の保持に必要な説明文の長さを制限しない。
 - 図解要素と対応しない説明文、見出し、キャプションは単独で存在していない。
-
-### 正確性より直感的理解優先
-
-- 主題を変質させない範囲で、厳密さや網羅性より直感的な理解を優先している。
-- 主題の理解に不要な説明、細部、冗長な情報がない。
-- 簡略化しても、トピックセンテンスが表す中心的な意味は欠落または逆転していない。
-- 文字と図形は、中心的な意味を保てる範囲で少なく大きい。
 
 ### 概念を抽出し共通図解
 
