@@ -1,0 +1,6 @@
+interface:
+  display_name: "Knowledge Boundaries"
+  short_description: "Source・Knowledge・Outputの情報境界を維持する"
+  default_prompt: "Use $knowledge-boundaries to classify project information and keep generated outputs grounded in reviewed knowledge."
+policy:
+  allow_implicit_invocation: true
