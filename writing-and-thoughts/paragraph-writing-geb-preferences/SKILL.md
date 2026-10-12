@@ -1,6 +1,6 @@
 ---
 name: paragraph-writing-geb-preferences
-description: Geb個人向けの日本語Markdown文章を執筆、編集、または整形し、トピック・センテンスの強調と一文一行の表記を適用する場合に使用する。
+description: 論理的な文章を作成するときに使用する。文学的な文章や、意図的に自由な段落構成を採る文章には使用しない。
 ---
 
 # Gebのパラグラフ表記設定

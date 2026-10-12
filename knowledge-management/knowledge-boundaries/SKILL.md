@@ -1,6 +1,6 @@
 ---
 name: knowledge-boundaries
-description: Use when project-based research, discussion, design, or document creation must distinguish unreviewed sources from the user's reviewed understanding and keep deliverables grounded in that understanding.
+description: Use when performing any kind of knowledge works with AI.
 ---
 
 # Knowledge Boundaries
