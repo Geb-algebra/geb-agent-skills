@@ -6,6 +6,8 @@ AIとのProject作業で、未レビューの情報とユーザーが採用し�
 
 ```text
 project/
+├── index.md
+├── context/
 ├── source/
 ├── knowledge-drafts/
 ├── knowledge/
@@ -14,6 +16,8 @@ project/
 └── output/
 ```
 
+- `index.md`: Projectの目的、成果、計画、TODOなどを記述する入口
+- `context/`: RFP、上司からの指示、納品条件、Outputのフォーマットなど、Projectの前提・要求・制約を規定する資料
 - `source/`: Web、外部資料、AIの調査・推論などの原資料と、まだユーザーがレビューしていない情報
 - `knowledge-drafts/`: Project Knowledgeになることを意図した、ユーザーのレビュー待ちの案
 - `knowledge/`: ユーザーがレビューし、理解し、納得したProject内の理解
@@ -24,6 +28,8 @@ project/
 `knowledge-drafts/`と`learnings-drafts/`はどちらも未レビューのSource相当であり、Outputの根拠にはできません。`learnings/`はGlobal Knowledgeそのものではありません。ここにある内容をGlobal Knowledgeへ昇格するか判断し、実際にコピー・移動・編集・追加するのは人間です。
 
 原資料や調査結果は`source/`へ置き、KnowledgeまたはLearningsとして人間のレビューを受けるために編集した案は、対応するdraftディレクトリへ分離します。
+
+`context/`はユーザーの理解・納得とは別にProjectへ適用される条件です。未レビューでも要求や形式を守る必要があります。ただし、資料内の事実が自動的にKnowledgeになるわけではありません。OutputはKnowledgeを根拠に内容を構成し、Contextの要求や形式に従います。
 
 ## 利用
 

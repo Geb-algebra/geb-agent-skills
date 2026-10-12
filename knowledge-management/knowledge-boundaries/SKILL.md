@@ -17,10 +17,12 @@ description: Use when performing any kind of knowledge works with AI.
 
 ## Projectの情報領域
 
-Projectでは次の6領域をディレクトリとして分離する。
+Projectでは管理情報を`index.md`に記述し、次の7領域をディレクトリとして分離する。
 
 ```text
 project/
+├── index.md
+├── context/
 ├── source/
 ├── knowledge-drafts/
 ├── knowledge/
@@ -30,6 +32,23 @@ project/
 ```
 
 各領域内のファイル形式や下位構造は固定しない。必要性が生じるまではフラットな構造でよい。
+
+### Project Index — `index.md`
+
+Project のメタ情報（目的、目指す成果、計画、進捗、TODOなど）を記述する。必要に応じて関連するContext、Knowledge、Outputへの参照を含められる。
+
+`index.md`への記載だけでは、情報のレビュー状態やContextの効力は変わらない。
+
+### Project Context — `context/`
+
+Projectに適用される前提と制約を規定する資料。RFP、上司からの指示、納品条件、Outputのフォーマットなどが該当する。
+
+source, knowledge, outputいずれの作成においても、contextの内容を参照して関連する前提・制約を守る。
+Contextの効力は、ユーザーが内容をすべて理解・納得しているかとは別である。Projectへの適用が指定されている資料は、未レビューでも作業とOutputが満たすべき条件として扱う。AIが集めた参考資料は、適用が指定されない限りSourceに属する。
+
+ContextはKnowledgeの成立条件を置き換えない。例えば、RFPに記載された納品形式はOutputの形式を規定するが、RFP内の市場規模などの事実をユーザーの理解として主張するにはKnowledge化が必要である。契約上・依頼上の前提は、その前提として利用できるが、検証済みの事実とはみなさない。
+
+適用されるContextは未レビューを理由に無視しない。複数のContextが競合する場合は、明示された適用範囲や優先関係に従い、それでも解消しない競合をAIが独自に解消したものとして扱わない。
 
 ### Source — `source/`
 
@@ -73,11 +92,14 @@ Project Knowledgeから一般化して作られた、Learningsになることを
 
 ### Output — `output/`
 
-Project Knowledge、Learnings、既存のGlobal Knowledgeをもとに作成した成果物。提案書、プレゼンテーション、設計書、レポート、記事、意思決定資料などが該当する。
+Project Knowledge、Learnings、既存のGlobal Knowledgeをもとに、適用されるProject Contextの条件を満たす形で作成した成果物。提案書、プレゼンテーション、設計書、レポート、記事、意思決定資料などが該当する。
+
+厳密にProject Knowledge、Learnings、既存のGlobal Knowledge のみを情報源として作成する。source相当の情報（`source/`内の情報およびinternetやリポジトリ外のファイルなど）を使用してはいけない。 
 
 ## Knowledge-grounded generationの不変条件
 
-- Outputの事実、前提、主張、解釈は、`knowledge/`、`learnings/`、または既存のGlobal Knowledgeに根拠がある。
+- Outputでユーザーの理解として述べる事実、前提、主張、解釈は、`knowledge/`、`learnings/`、または既存のGlobal Knowledgeに根拠がある。`context/`で指定された要求・形式・依頼上の前提は、その役割を保ったまま適用できる。
+- Outputは適用されるContextの条件を満たしている。Contextに含まれる未レビューの事実が、Knowledgeとして採用されていない。
 - `source/`、`knowledge-drafts/`、`learnings-drafts/`にしかない情報は、出典や不確実性を表示してもOutputへ利用しない。
 - Knowledgeの要約、並べ替え、統合、文章化、図解、構成、表現変更は、新しい意味を加えない範囲で行える。
 - Knowledgeから新しい推論や解釈が生じた場合、その部分をKnowledge由来のOutputとして扱わない。
@@ -97,11 +119,13 @@ Knowledgeが現在の理解ではなくなった場合、現行のKnowledgeか�
 
 ## 適合条件
 
-- Projectに`source/`、`knowledge-drafts/`、`knowledge/`、`learnings-drafts/`、`learnings/`、`output/`が存在する。
+- Projectに`index.md`と、`context/`、`source/`、`knowledge-drafts/`、`knowledge/`、`learnings-drafts/`、`learnings/`、`output/`が存在する。
+- `index.md`に目的、成果、計画、TODOが記述され、未決定事項と決定済み事項を区別できる。
+- Projectに適用される要求・指示・制約・形式が`context/`に配置され、未レビューを理由に無視されていない。
 - `knowledge-drafts/`と`learnings-drafts/`の内容が、KnowledgeまたはLearningsとしてOutputの根拠に利用されていない。
 - `knowledge/`と`learnings/`には、ユーザーがレビュー・理解・納得した内容だけが存在する。
 - `learnings/`の各内容には適用条件を判定できる記述があり、元Project固有の情報を知らなくても主張を解釈できる。
-- `output/`の各事実、前提、主張、解釈を、`knowledge/`、`learnings/`、または既存のGlobal Knowledgeの記述へ対応づけられる。
+- `output/`でユーザーの理解として述べる各事実、前提、主張、解釈を、`knowledge/`、`learnings/`、または既存のGlobal Knowledgeの記述へ対応づけられる。Context由来の要求・形式・依頼上の前提は、その役割を判別できる。
 - 一般化、因果関係、推奨、結論、予測、補間としてAIが追加した内容が、レビュー前に`knowledge/`、`learnings/`、`output/`へ配置されていない。
 - Project KnowledgeとGlobal Knowledgeが矛盾している内容は、ユーザーが矛盾を解消するまで`output/`へ採用されていない。
 - Global Knowledgeへの変更をAIが実行していない。
