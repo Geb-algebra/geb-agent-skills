@@ -7,6 +7,8 @@ description: Use when defining the screen structure of a new user interface or r
 
 ## 目的
 
+Object-oriented user interfaces の設計原則に従い、UIを設計する。
+
 ユーザーが達成したいタスクを確立し、ユーザーが扱う対象とその関係を直接たどり、対象の性質と状態を見ながら必要な操作を完了できる画面構成を定義する。
 
 ## 成果
