@@ -1,17 +1,25 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": {
+    "composable-skill-design": {
+      "source": "Geb-algebra/geb-agent-skills",
+      "commit": "e11283e0410145f4474eaa4ba37b088a78e30661",
+      "sourceType": "github",
+      "skillPath": "composable-skill-design/SKILL.md",
+      "computedHash": "8bacf2bec63f4ada80b960afaf1db72ca7d051fa8ea95c66af4f9f027a13b951"
+    },
     "test-driven-development": {
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/test-driven-development/SKILL.md",
-      "computedHash": "a4126a9c5f17be3c228aa9e5755898ade283448b86099f56f40852e8c14532be"
+      "computedHash": "f581644041610b5a7c9c0d5cdf7142e5a7b724cfdb993b03e0f56c1145c6bfe6"
     },
-    "writing-skills": {
-      "source": "obra/superpowers",
+    "test-driven-skill-development": {
+      "source": "Geb-algebra/geb-agent-skills",
+      "commit": "e11283e0410145f4474eaa4ba37b088a78e30661",
       "sourceType": "github",
-      "skillPath": "skills/writing-skills/SKILL.md",
-      "computedHash": "e5dfc1a942f56dc757421b0d87ae1f38ab693ebc71138e65268fd408bb5c93d3"
+      "skillPath": "test-driven-skill-development/SKILL.md",
+      "computedHash": "c6cb08a361ae85268445b5c923966bab309ce68a869956438568d0669c2e3038"
     }
   }
 }
